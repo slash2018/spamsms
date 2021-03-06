@@ -1,25 +1,47 @@
-# Ssan Script
-<img src="KingBoyV01.jpg" alt="Ssan Cok">
-
-# Information
-Jangan Salah Gunakan Script Ini!
-Saya tidak bertanggung jawab jika
-Terjadi Apa² dengan anda!
-# Installed
-```BASH
-• pkg install python
-• pkg install python3
-• pkg install pip
-• pip install requests
-• pkg install git
+# MDSpammers
+Medium spammers dengan 30 Tools Spammers (SMS,Call,Wa).
+# Spam available
 ```
-# Buat Runnya
-```BASH
-• git clone https://github.com/KinBoyV01/SpamSmS
-• cd SpamSmS
-• python3 KingBoyV01.py
+- asakita
+- sunchilla 
+- nutriclub
+- asani
+- wintershop
+- datesy
+- thaifriendly
+- jumpstart
+- kinimart
+- klikwa
+- bakmikeraton
+- kopidulukala
+- kredinesia
+- pinjamindo
+- uangpintar
+- danafix
+- maucash 
+- omamoriexpress
+- danacepat
+- cairin
+- kredito
+- kreditpedia
+- bocil
+- duitqu
+- primacash
+- temanprima
+- maripinjam
+- sobatbangun
 ```
-# Addtional Information
-```PHP
-KingBoy GANTENG :V JANGAN REMAKE YAH SAYANG :)
+# Requirements
 ```
+requests
+```
+# Installation
+```
+$ apt update && apt upgrade
+$ pkg update;pkg install python2
+$ git clone https://github.com/AbilSeno/MDSpammers
+$ cd MDSpammers
+$ pip2 install requests
+$ python2 main.py
+```
+Ketik ```git pull``` untuk mengupdate script
